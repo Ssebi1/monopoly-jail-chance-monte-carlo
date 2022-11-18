@@ -126,6 +126,7 @@ def game(community_cards, chance_cards, game_end, board_travels, dice_rolls):
         if table[position] == 3:
             position = 9
             jail_number += 1
+            consecutive_doubles_count = 0
 
             string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: jail"
             if game_end == "jail":
