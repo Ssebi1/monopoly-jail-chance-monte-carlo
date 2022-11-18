@@ -131,7 +131,7 @@ def game(community_cards, chance_cards, game_end, board_travels, dice_rolls):
             if game_end == "jail":
                 return jail_number, string_log
 
-        if old_position > position and position < 8 and old_position > 30:
+        if old_position > position and 0 <= position < 8 and old_position > 30:
             board_travels_count += 1
             if board_travels != 0 and board_travels_count > board_travels:
                 string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
