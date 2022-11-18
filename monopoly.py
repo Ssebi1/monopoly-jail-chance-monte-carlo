@@ -127,23 +127,23 @@ def game(community_cards, chance_cards, game_end, board_travels, dice_rolls):
             position = 9
             jail_number += 1
 
-            string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
+            string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: jail"
             if game_end == "jail":
                 return jail_number, string_log
 
         if old_position > position and 0 <= position < 8 and old_position > 30:
             board_travels_count += 1
             if board_travels != 0 and board_travels_count > board_travels:
-                string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
+                string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: " + str(position)
                 return jail_number, string_log
 
         if dice_rolls != 0 and dice_rolls_count >= dice_rolls:
-            string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
+            string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: " + str(position)
             return jail_number, string_log
         if dice_rolls >= max_dice_rolls_count:
-            string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
+            string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: " + str(position)
             return jail_number, string_log
-        string_log += " | " + "dice: " + "(" + str(dice1) + "." + str(dice2) + ") position: " + str(position)
+        string_log += " | " + "dice: " + "(" + str(dice1) + "," + str(dice2) + ") position: " + str(position)
 
 
 def monte_carlo(games_number, community_cards, chance_cards, game_end, board_travels, dice_rolls):
