@@ -25,20 +25,6 @@ table = [0, 2, 0, 0, 0, 0, 1, 0, 0, 0,
          0, 0, 2, 0, 0, 1, 0, 0, 0, 0]
 
 
-def init_cards():
-    community_cards = [('neutral', 0) for _ in range(14)]
-    community_cards += [('tp.advance-to-go', 39), ('tp.go-to-jail', 29)]
-    random.shuffle(community_cards)
-
-    chance_cards = [('neutral', 0) for _ in range(7)]
-    chance_cards += [('tp.advance-to-boardwalk', 38), ('tp.advance-to-go', 39), ('tp.advance-to-illinois', 23),
-                     ('tp.advance-to-st-charles', 10),
-                     ('move.go-back-3-spaces', 3), ('tp.go-to-jail', 29)]
-    random.shuffle(chance_cards)
-
-    return community_cards, chance_cards
-
-
 def game_settings(file_name):
     f = open(file_name, "r")
     game_end = "jail"
@@ -72,6 +58,20 @@ def game_settings(file_name):
             if games_number <= 0:
                 games_number = 10
     return game_end, board_travels, dice_rolls, games_number
+
+
+def init_cards():
+    community_cards = [('neutral', 0) for _ in range(14)]
+    community_cards += [('tp.advance-to-go', 39), ('tp.go-to-jail', 29)]
+    random.shuffle(community_cards)
+
+    chance_cards = [('neutral', 0) for _ in range(7)]
+    chance_cards += [('tp.advance-to-boardwalk', 38), ('tp.advance-to-go', 39), ('tp.advance-to-illinois', 23),
+                     ('tp.advance-to-st-charles', 10),
+                     ('move.go-back-3-spaces', 3), ('tp.go-to-jail', 29)]
+    random.shuffle(chance_cards)
+
+    return community_cards, chance_cards
 
 
 def roll_dices():
